@@ -1,0 +1,46 @@
+/* Styles for the header */
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Styles for the form section */
+section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Styles for form labels */
+label {
+  font-weight: bold;
+}
+
+/* Apply Bootstrap classes to form inputs and buttons */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='tel'],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Apply Bootstrap classes to submit button */
+input[type='submit'] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive design using Bootstrap classes */
+@media (max-width: 768px) {
+  section {
+    padding: 10px;
+  }
+}
