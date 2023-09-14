@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Formulaire de compte client</title>
-    <link rel="stylesheet" href="/resources/css/styles.css" />
+    <link rel="stylesheet" href="../resources/css/styles.css" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -17,7 +17,12 @@
 
     <section>
       <h2>Informations personnelles</h2>
-      <form action="#" method="post">
+      <form
+        action="#"
+        method="post"
+        id="accountForm"
+        onSubmit="return validateForm()"
+      >
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" required />
         <br />
@@ -84,6 +89,7 @@
         <input type="text" id="login" name="login" required />
         <br />
 
+        <div id="globalError" class="error"></div>
         <input type="submit" value="Valider" />
       </form>
     </section>
@@ -93,3 +99,20 @@
     </footer>
   </body>
 </html>
+
+<script>
+  function validateForm() {
+    // Réinitialisez les messages d'erreur précédents
+    $('.error').text('')
+
+    var password = $('#password').val()
+    var confirmPassword = $('#confirmPassword').val()
+
+    if (password !== confirmPassword) {
+      $('#confirmPasswordError').text('Les mots de passe ne correspondent pas.')
+      return false // Empêche la soumission du formulaire
+    }
+
+    return true // Autorise la soumission du formulaire
+  }
+</script>
